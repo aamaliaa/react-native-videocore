@@ -17,19 +17,23 @@ All you need is to require the `react-native-videocore` module and then use the 
 
 ```javascript
 
-var React = require('react-native');
-var {
+import React, { Component } from 'react'
+import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableHighlight
-} = React;
+} from 'react-native'
 
-var VideoCore = require('react-native-videocore')
+import VideoCore from 'react-native-videocore'
 
-var VideoCoreSampleApp = React.createClass({
-  render: function() {
+class VideoCoreSampleApp extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
     return (
       <View style={styles.container}>
         <VideoCore style={{ alignSelf: 'stretch', flex: 1 }} onConnectionStatusChanged={(e) => console.log(e)}>
@@ -37,20 +41,20 @@ var VideoCoreSampleApp = React.createClass({
           <TouchableHighlight onPress={() => VideoCore.stopStreaming()}><Text style={{color: "#fff", margin: 50}}>STOP Streaming</Text></TouchableHighlight>
         </VideoCore>
       </View>
-    );
+    )
   }
-});
+}
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   }
-});
+})
 
-AppRegistry.registerComponent('VideoCoreSampleApp', () => VideoCoreSampleApp);
+AppRegistry.registerComponent('VideoCoreSampleApp', () => VideoCoreSampleApp)
 
 ```
 
@@ -91,10 +95,10 @@ pod 'VideoCore', :git => 'git@github.com:phelrine/VideoCore.git', :branch => 'fi
 As you can see, I actually use a fork which has some bugs already fixed.
 
 #### 2. Install Cocoapods and the dependencies
-Inside `ios` folder run: `sudo gem install cocoapods -v 0.37.2 && pod _0.37.2_ install`
-Note: you must use this version because the latest versions of Cocoapods have a bug and your project won't run
+Inside `ios` folder run: `sudo gem install cocoapods && pod install`
 
 #### 3. Go to the Build Settings of your Xcode project and search for Linking
+In the ios folder run: `rnpm link react-native-videocore
 On the Other Linker Flags, make sure you have `-ObjC` and `$(inherited)` on the list
 
 
