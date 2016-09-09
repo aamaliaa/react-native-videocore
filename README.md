@@ -95,10 +95,10 @@ pod 'VideoCore', :git => 'git@github.com:phelrine/VideoCore.git', :branch => 'fi
 As you can see, I actually use a fork which has some bugs already fixed.
 
 #### 2. Install Cocoapods and the dependencies
-Inside `ios` folder run: `sudo gem install cocoapods && pod install`
+Inside `ios` folder run: `sudo gem install cocoapods -v 0.37.2 && pod _0.37.2_ install`
+Note: you must use this version because the latest versions of Cocoapods have a bug and your project won't run
 
 #### 3. Go to the Build Settings of your Xcode project and search for Linking
-In the ios folder run: `rnpm link react-native-videocore
 On the Other Linker Flags, make sure you have `-ObjC` and `$(inherited)` on the list
 
 
