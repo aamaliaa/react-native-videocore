@@ -27,6 +27,10 @@ var VideoCore = React.createClass({
     stopStreaming: function() {
       NativeModules.VideoCoreViewManager.stopStreaming()
     },
+
+    flipCamera: function() {
+      NativeModules.VideoCoreViewManager.flipCamera()
+    }
   },
 
   getInitialState: function() {
