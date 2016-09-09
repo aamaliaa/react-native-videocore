@@ -17,6 +17,7 @@
 
 + (void) startStream:(NSString *)streamUrl andStreamKey:(NSString *)streamKey;
 + (void) stopStream;
++ (void) flipCamera;
 
 - (instancetype) initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher NS_DESIGNATED_INITIALIZER;
 

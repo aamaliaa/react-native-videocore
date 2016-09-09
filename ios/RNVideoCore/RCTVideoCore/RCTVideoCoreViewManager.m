@@ -33,5 +33,8 @@ RCT_EXPORT_METHOD(stopStreaming) {
   [RCTVideoCoreView stopStream];
 }
 
+RCT_EXPORT_METHOD(flipCamera) {
+  [RCTVideoCoreView flipCamera];
+}
 
 @end
