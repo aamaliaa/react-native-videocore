@@ -14,7 +14,7 @@ import {
   NativeModules,
   DeviceEventEmitter,
   TouchableHighlight
-} from react-native
+} from 'react-native'
 
 var VideoCoreView = requireNativeComponent('RCTVideoCoreView', null);
 
